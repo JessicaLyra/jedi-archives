@@ -1,11 +1,16 @@
-export const characters = [
+import { Character } from "@/types/character";
+
+export const characters: Character[] = [
   {
-    slug: "luke-skywalker",
-    name: "Luke Skywalker",
-    side: "light",
-    planet: "Tatooine",
-    role: "Jedi",
-    power: 85,
+      slug: "luke-skywalker",
+      name: "Luke Skywalker",
+      side: "light",
+      planet: "Tatooine",
+      role: "Jedi",
+      power: 85,
+      image: "",
+      affiliation: "Jedi",
+      description: ""
   },
   {
     slug: "darth-vader",
