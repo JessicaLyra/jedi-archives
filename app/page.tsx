@@ -25,40 +25,38 @@ export default function Home() {
           priority
         />
       </div>
-      <h1 className="text-3xl font-bold mb-6">
-        Jedi Archives
-      </h1>
+    
       <div className="flex gap-4 justify-center mb-8">
 
         <button
           onClick={() => setFilter("all")}
-          className={`px-4 py-2 rounded-full border ${
+          className={`px-4 py-2 rounded-full  ${
             filter === "all"
-              ? "bg-white text-black"
-              : "border-white/20"
-          }`}
+              ? "border-amber-400 border-1 text-white"
+              : "border-0"
+          }transition-all duration-300 hover:bg-amber-400 hover:text-black hover:scale-105`}
         >
           Todos
         </button>
 
         <button
           onClick={() => setFilter("light")}
-          className={`px-4 py-2 rounded-full border ${
+          className={`px-4 py-2 rounded-full  ${
             filter === "light"
-              ? "bg-blue-500 text-white"
-              : "border-white/20"
-          }`}
+              ? "border-amber-400 border-1 text-white "
+              : "border-0"
+          }transition-all duration-300 hover:bg-amber-400 hover:text-black hover:scale-105`}
         >
           Lado da Luz
         </button>
 
         <button
           onClick={() => setFilter("dark")}
-          className={`px-4 py-2 rounded-full border ${
+          className={`px-4 py-2 rounded-full   ${
             filter === "dark"
-              ? "bg-red-500 text-white"
-              : "border-white/20"
-          }`}
+              ? "border-amber-400 border-1 text-white"
+              : "border-0"
+          } transition-all duration-300 hover:bg-amber-400 hover:text-black hover:scale-105`}
         >
           Lado Sombrio
         </button>
