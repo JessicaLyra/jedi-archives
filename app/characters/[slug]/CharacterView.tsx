@@ -34,34 +34,45 @@ export default function CharacterView({ character }: any) {
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
 
-            {/* HOLOGRAMA PROTAGONISTA */}
-            <div className="relative flex justify-center items-center">
+          {/* HOLOGRAMA PROTAGONISTA */}
+<div className="relative flex justify-center items-center">
 
-              {/* Glow suave central */}
-              <div className="absolute w-[450px] h-[450px] bg-cyan-400/10 blur-[140px] rounded-full" />
+  {/* Glow suave */}
+  <div className="absolute w-[450px] h-[450px] bg-cyan-400/10 blur-[140px] rounded-full" />
 
-              {/* Linha de scan */}
-              <motion.div
-                animate={{ y: [-200, 200] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-                className="absolute w-full h-[5px] bg-cyan-400/30 blur-[8px]"
-              />
+  {/* Scan line animada */}
+  <motion.div
+    animate={{ y: [-200, 200] }}
+    transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+    className="absolute w-full h-[1px] bg-cyan-300/30"
+  />
 
-              {/* Imagem */}
-              <motion.div
-                animate={{ rotateY: 360 }}
-                transition={{ repeat: Infinity, duration: 14, ease: "linear" }}
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                <Image
-                  src={character.holograma || character.image}
-                  alt={character.name}
-                  width={420}
-                  height={520}
-                  className="brightness-80 contrast-100 "
-                />
-              </motion.div>
-            </div>
+  {/* Container holograma */}
+  <motion.div
+    animate={{ rotateY: 360 }}
+    transition={{ repeat: Infinity, duration: 14, ease: "linear" }}
+    style={{ transformStyle: "preserve-3d" }}
+    className="relative"
+  >
+    <Image
+      src={character.holograma || character.image}
+      alt={character.name}
+      width={420}
+      height={520}
+      className="brightness-125 contrast-125 drop-shadow-[0_0_60px_rgba(0,255,255,0.9)]"
+    />
+
+    {/* LINHAS HORIZONTAIS */}
+    <div
+      className="absolute inset-0 pointer-events-none"
+      style={{
+        background:
+          "repeating-linear-gradient(to bottom, rgba(0,255,255,0.08) 0px, rgba(0,255,255,0.08) 1px, transparent 1px, transparent 4px)",
+        mixBlendMode: "screen",
+      }}
+    />
+  </motion.div>
+</div>
 
             {/* INFORMAÇÕES DISCRETAS */}
             <div className="space-y-10">
