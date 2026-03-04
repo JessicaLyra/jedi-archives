@@ -1,5 +1,6 @@
 import { characters } from "@/data/characters";
-import Image from "next/image";
+import CharacterView from "./CharacterView";
+
 interface Props {
   params: Promise<{
     slug: string;
@@ -14,24 +15,8 @@ export default async function CharacterPage({ params }: Props) {
   );
 
   if (!character) {
-    return <h1>Personagem não encontrado</h1>;
+    return <div>Personagem não encontrado</div>;
   }
 
-  return (
-    <div >
-    <main className="p-6 min-h-screen bg-cover bg-center" style={{ padding: 20 }} style={{backgroundImage: "url('/images/bg.jpg')"}}>
-      <Image 
-      src={character.image}
-      alt={character.name}
-      width={300}
-      height={400}className="object-contain"
-      />
-      <h1>{character.name}</h1>
-      <p>Planeta: {character.planet}</p>
-      <p>Lado: {character.side}</p>
-      <p>Poder: {character.power}</p>
-      
-    </main>
-    </div>
-  );
+  return <CharacterView character={character} />;
 }

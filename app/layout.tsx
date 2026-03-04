@@ -1,4 +1,7 @@
 import "./globals.css";
+import Template from "./Template";
+import TransitionProvider from "@/components/TransitionProvider";
+
 
 export const metadata = {
   title: "Jedi Archives",
@@ -11,9 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <body className="bg-zinc-950 text-zinc-100">
-        {children}
+     <html lang="pt-BR">
+      <body>
+        <TransitionProvider>
+          {children}
+        </TransitionProvider>
       </body>
     </html>
   );
